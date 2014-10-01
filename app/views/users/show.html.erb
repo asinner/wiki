@@ -1,0 +1,14 @@
+<h1>Page for <%= @user.email %></h1>
+
+<div class='contributions'>
+	<% if @user.contributions.any? %>
+		<h3>Contributions:</h3>
+		<% @user.contributions.each do |page| %>
+			<%= link_to page.title, page_path(page) %>
+		<% end %>
+	<% else %>
+	  
+		<p>No contributions yet</p>
+	
+	<% end %>
+</div>
